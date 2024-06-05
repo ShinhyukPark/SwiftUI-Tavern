@@ -59,18 +59,20 @@ struct ContentView: View {
         }
     }
     
-    
+
     func loadData() {
         guard let url = URL(string: "https://rickandmortyapi.com/api/character") else {
-            print("Invalid URL")
+            print("Invalid URL") //URL객체를 생성, URL이 유효한지 확인
             return
         }
-        
-        URLSession.shared.dataTask(with: url) { data, response, error in
+        //네트워크 요청
+        URLSession.shared.dataTask(with: url) { data, response, error in //dtaTask구조? 데이터, 응답, 오류
             if let data = data{
                 do {
+                    //디코딩
                     let decoder = JSONDecoder()
                     let decodedCharacters = try decoder.decode(Characters.self, from: data)
+                    //메인 스레드에서 비동기적으로 작업?, 디코딩 된 데이터를 results에 저장
                     DispatchQueue.main.async {
                         self.results = decodedCharacters.results
                         print("Data loaded successfully: \(self.results)")
@@ -79,6 +81,7 @@ struct ContentView: View {
                     print("Error decoding JSON: \(error)")
                 }
             }
+        //dataTask는 기본적으로 정지상태, 요청시작
         }.resume()
     }
 }
