@@ -8,8 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @AppStorage("toggle") private var isToggle = false
+    
     var body: some View {
-        Text("Hello, world!")
+        Toggle(isOn: $isToggle) {
+            Text("Toggle - \(String(isToggle))")
+        }
+        .frame(width:300)
     }
 }
 
