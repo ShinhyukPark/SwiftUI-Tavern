@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
-    
+
+    //@AppStorage("고유값") var 이름 = 값
     @AppStorage("toggle") private var isToggle = false
     
     var body: some View {
