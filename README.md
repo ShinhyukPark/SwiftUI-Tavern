@@ -26,3 +26,16 @@ SwifUI에서 UserDefaults에 저장된 값을 반영하며, 자동으로 뷰를 
 ### 프리뷰
 ![AppStorage](https://github.com/ShinhyukPark/SwiftUI-Tavern/assets/104442595/8957f569-2cdf-4504-90d5-b66f9c7d4ffa)
 </details>
+
+<details>
+  <summary>CoreData</summary>
+  
+# CoreData
+AppStorage는 간단한 설정값이나 상태를 저장할때 사용,
+CoreData는 좀 더 복잡한 데이터를 관리할때 사용
+
+
+[코드 바로가기](https://github.com/ShinhyukPark/SwiftUI-Tavern/tree/main/CoreData-TodoList)
+
+### 프리뷰
+![CoreData-Todo](https://github.com/ShinhyukPark/SwiftUI-Tavern/assets/104442595/5f40766a-981c-44b2-8137-408d792967ad)
