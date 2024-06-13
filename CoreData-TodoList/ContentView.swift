@@ -12,7 +12,7 @@ struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
     
     @FetchRequest(entity: Todo.entity(),
-                  sortDescriptors: [NSSortDescriptor(keyPath: \Todo.timestamp, ascending: true)])
+                  sortDescriptors: [NSSortDescriptor(keyPath: \Todo.timestamp, ascending: true)]) //시간 순으로 정렬
     var todo: FetchedResults<Todo>
     
     @State var textFieldTitle = ""
@@ -52,7 +52,7 @@ struct ContentView: View {
         }
     }
     
-    
+    //status 토글 함수
     private func toggleB(for item: Todo){
         withAnimation {
             item.status.toggle()
@@ -67,7 +67,7 @@ struct ContentView: View {
             }
         }
     }
-    
+        //Item추가 함수 (title 추가 및 초기화, 시간순으로 정렬하기 위해 시간)
         private func addItem() {
             withAnimation {
                 let newTodo = Todo(context: viewContext)
