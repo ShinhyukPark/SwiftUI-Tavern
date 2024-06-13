@@ -13,6 +13,7 @@ struct PersistenceController {
     static var preview: PersistenceController = {
         let result = PersistenceController(inMemory: true)
         let viewContext = result.container.viewContext
+        //초기값
         for item in 0..<10 {
             let newTitle = Todo(context: viewContext)
             newTitle.status = false
